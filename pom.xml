@@ -195,7 +195,7 @@
                             <target>
                                 <copy todir="${project.build.directory}/classes/public">
                                     <!-- check your frontend's dist or build folders -->
-                                    <fileset dir="${project.basedir}/frontend/dist/superheroes"/>
+                                    <fileset dir="${project.basedir}/frontend/dist/practicelogs"/>
                                 </copy>
                             </target>
                         </configuration>
