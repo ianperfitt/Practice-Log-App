@@ -2,28 +2,28 @@
     <h2>{{selectedPracticeLog ? "Update/View Log" : "Create Log"}}</h2>
     <form class="practice-log-form" [formGroup]="form">
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First Name</mat-label>
-            <input matInput formControlName="firstName" 
-                   placeholder="Ex. Tony" data-cy="firstName">
+            <mat-label>Instrument</mat-label>
+            <input matInput formControlName="instrument" 
+                   placeholder="Ex. Guitar" data-cy="instrument">
         </mat-form-field>
     
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Last Name</mat-label>
-            <input matInput formControlName="lastName" 
-                   placeholder="Ex. Stark" data-cy="lastName">
+            <mat-label>Key</mat-label>
+            <input matInput formControlName="key" 
+                   placeholder="Ex. C" data-cy="key">
         </mat-form-field>
     
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>House</mat-label>
-            <input matInput formControlName="house" 
-                   placeholder="Ex. California" data-cy="house">
+            <mat-label>Tempo</mat-label>
+            <input matInput formControlName="tempo" 
+                   placeholder="Ex. 120 BPM" data-cy="tempo">
         </mat-form-field>
     
     
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Known As</mat-label>
-            <input matInput formControlName="knownAs" 
-                   placeholder="Ex. Iron Man" data-cy="action">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" 
+                   placeholder="Ex. Play the scale in ascending order" data-cy="action">
         </mat-form-field>
         <div class="button-group">
 

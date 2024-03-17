@@ -31,9 +31,9 @@ public class PracticeLogH2ServiceTest {
     @Test
     public void shouldFindAllPracticeLog() {
         PracticeLogEntity practiceLog = new PracticeLogEntity();
-        practiceLog.setFirstName("Eddie");
-        practiceLog.setLastName("Brock");
-        practiceLog.setHouse("MCU");
+        practiceLog.setInstrument("Guitar");
+        practiceLog.setKey("C");
+        practiceLog.setTempo("120 BPM");
         service.addPracticeLog(practiceLog);
         Iterable<PracticeLogEntity> practiceLogList = service.findAllPracticeLogs();
         PracticeLogEntity savedPracticeLog = practiceLogList.iterator().next();
@@ -43,9 +43,9 @@ public class PracticeLogH2ServiceTest {
     @Test
     public void shouldAddAntiHero() {
         PracticeLogEntity practiceLog = new PracticeLogEntity();
-        practiceLog.setFirstName("Eddie");
-        practiceLog.setLastName("Brock");
-        practiceLog.setHouse("MCU");
+        practiceLog.setInstrument("Guitar");
+        practiceLog.setKey("C");
+        practiceLog.setTempo("120 BPM");
         service.addPracticeLog(practiceLog);
         Iterable<PracticeLogEntity> antiHeroList = service.findAllPracticeLogs();
         PracticeLogEntity savedPracticeLog = antiHeroList.iterator().next();
@@ -55,14 +55,14 @@ public class PracticeLogH2ServiceTest {
     @Test
     public void shouldUpdateAntiHero() {
         PracticeLogEntity practiceLog = new PracticeLogEntity();
-        practiceLog.setFirstName("Eddie");
-        practiceLog.setLastName("Brock");
-        practiceLog.setHouse("MCU");
+        practiceLog.setInstrument("Guitar");
+        practiceLog.setKey("C");
+        practiceLog.setTempo("120 BPM");
         PracticeLogEntity savedPracticeLog = service.addPracticeLog(practiceLog);
-        savedPracticeLog.setHouse("San Francisco");
+        savedPracticeLog.setTempo("130 BPM");
         service.updatePracticeLog(savedPracticeLog.getId(), savedPracticeLog);
         PracticeLogEntity foundPracticeLog = service.findPracticeLogById(savedPracticeLog.getId());
-        assertThat(foundPracticeLog.getHouse()).isEqualTo("San Francisco");
+        assertThat(foundPracticeLog.getTempo()).isEqualTo("130 BPM");
     }
 
     @Test

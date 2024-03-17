@@ -17,10 +17,10 @@ export class PracticeLogFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       id: [''],
-      firstName: [''],
-      lastName: [''],
-      house: [''],
-      knownAs: ['']
+      instrument: [''],
+      key: [''],
+      tempo: [''],
+      description: ['']
     })
    }
 

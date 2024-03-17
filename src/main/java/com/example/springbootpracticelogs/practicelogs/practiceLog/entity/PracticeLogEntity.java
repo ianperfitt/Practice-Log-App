@@ -23,14 +23,14 @@ public class PracticeLogEntity {
     @Column(nullable = false, updatable = false)
     private UUID id;
 
-    @NotNull(message = "First Name is required")
-    private String firstName;
+    @NotNull(message = "Instrument is required")
+    private String instrument;
 
-    private String lastName;
+    private String key;
 
-    private String house;
+    private String tempo;
 
-    private String knownAs;
+    private String description;
 
     private String createdAt = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss z").format(new Date());
 
