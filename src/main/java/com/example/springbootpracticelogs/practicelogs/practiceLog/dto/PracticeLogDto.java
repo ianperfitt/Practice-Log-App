@@ -12,16 +12,16 @@ public class PracticeLogDto {
 
     private UUID id;
 
-    @NotNull(message = "First Name is required")
-    private String firstName;
-    private String lastName;
-    private String house;
-    private String knownAs;
+    @NotNull(message = "Instrument is required")
+    private String instrument;
+    private String key;
+    private String tempo;
+    private String description;
 
     @Override
     public String toString() {
 
-        return id + " " + firstName + " " + lastName + " " + house + " " + knownAs;
+        return id + " " + instrument + " " + key + " " + tempo + " " + description;
     }
 
 
