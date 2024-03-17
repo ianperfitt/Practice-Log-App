@@ -31,7 +31,7 @@ loginUser$ = createEffect(() => {
             catchError(async (data) => ({ type: AuthActions.LOGIN_ERROR, error: data.error }))
           ))
         ))
-    }, {dispatch: true}
+    }, {dispatch: false}
   );
   constructor(
     private actions$: Actions,
