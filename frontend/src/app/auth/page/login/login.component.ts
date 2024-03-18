@@ -30,8 +30,11 @@ export class LoginComponent{
   getError() {
     this.error$.subscribe(data => {
       if(data) {
-        this._snackBar.open(data.message, "Error", {
+        let snackBarRef = this._snackBar.open(data.message, "Error", {
           duration: 2500
+        });
+        snackBarRef.afterDismissed().subscribe(() => {
+          this.store.dispatch({type: AuthActions.REMOVE_LOGIN_ERROR, payload: null})
         });
       }
     })
