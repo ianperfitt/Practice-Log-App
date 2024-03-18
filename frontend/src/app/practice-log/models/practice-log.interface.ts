@@ -1,7 +1,7 @@
 export interface PracticeLog {
     id: any;
-    firstName: string;
-    lastName: string;
-    house: string;
-    knownAs: string;
+    instrument: string;
+    key: string;
+    tempo: string;
+    description: string;
 }
