@@ -18,10 +18,10 @@ export class ListComponent implements OnInit {
   practiceLogs$ = this.store.select(selectPracticeLogs());
 
   headers: {headerName: string, fieldName: keyof PracticeLog}[] = [
-    {headerName: "First Name", fieldName: "firstName"},
-    {headerName: "Last Name", fieldName: "lastName"},
-    {headerName: "House", fieldName: "house"},
-    {headerName: "Known As", fieldName: "knownAs"},
+    {headerName: "Instrument", fieldName: "instrument"},
+    {headerName: "Key", fieldName: "key"},
+    {headerName: "Tempo", fieldName: "tempo"},
+    {headerName: "Description", fieldName: "description"},
   ]
 
   constructor(
