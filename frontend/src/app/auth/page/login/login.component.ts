@@ -30,7 +30,9 @@ export class LoginComponent{
   getError() {
     this.error$.subscribe(data => {
       if(data) {
-        this._snackBar.open(data.message, "Error");
+        this._snackBar.open(data.message, "Error", {
+          duration: 2500
+        });
       }
     })
   }
