@@ -6,6 +6,7 @@ export enum AuthActions {
   SET_TOKEN = '[AUTH] Set Token',
   CREATE_USER = '[AUTH] Create User',
   LOGIN_ERROR = 'LOGIN_ERROR',
+  REGISTER_ERROR = 'REGISTER_ERROR',
   REMOVE_LOGIN_ERROR = 'REMOVE_LOGIN_ERROR'
 }
 
@@ -14,9 +15,14 @@ export const setToken = createAction(
     props<{ token: string }>()
 );
 
-export const setError = createAction(
+export const setLoginError = createAction(
     AuthActions.LOGIN_ERROR,
     props<{ error: any}>()
+)
+
+export const setRegisterError = createAction(
+  AuthActions.REGISTER_ERROR,
+  props<{ error: any}>()
 )
 
 export const removeError = createAction(
