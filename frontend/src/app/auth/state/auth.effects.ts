@@ -28,10 +28,10 @@ loginUser$ = createEffect(() => {
         mergeMap(((data: {type: string, payload: User}) => this.authService.register(data.payload)
           .pipe(
             tap(() =>  this.router.navigate(["login"])),
-            catchError(async (data) => ({ type: AuthActions.LOGIN_ERROR, error: data.error }))
+            catchError(async (data) => ({ type: AuthActions.REGISTER_ERROR, error: data.error }))
           ))
         ))
-    }, {dispatch: false}
+    }, {dispatch: true}
   );
   constructor(
     private actions$: Actions,
