@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { User } from '../../models/user.interface';
 import { AuthActions } from '../../state/auth.actions';
+import { selectError } from '../../state/auth.selectors';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -9,10 +11,10 @@ import { AuthActions } from '../../state/auth.actions';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  error: string = "";
+  error$ = this.store.select(selectError());
 
-  constructor(private store: Store) {
-
+  constructor(private store: Store, private _snackBar: MatSnackBar) {
+    this.getError();
   }
 
   ngOnInit(): void {
@@ -23,5 +25,17 @@ export class RegisterComponent implements OnInit {
     this.store.dispatch({type: AuthActions.CREATE_USER, payload: data})
 
   }
+
+  getError() {
+    this.error$.subscribe(data => {
+      console.log("REGISTRATION DATA: " + data);
+      if(data) {
+        let snackBarRef = this._snackBar.open(data.message, "Error", {
+          duration: 2500
+        });
+      }
+    })
+  }
+  
 
 }
