@@ -29,7 +29,6 @@ export class LoginComponent{
 
   getError() {
     this.error$.subscribe(data => {
-      console.log("LOGIN DATA: " + data);
       if(data) {
         let snackBarRef = this._snackBar.open(data.message, "Error", {
           duration: 2500
