@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
 
   getError() {
     this.error$.subscribe(data => {
-      console.log("REGISTRATION DATA: " + data);
       if(data) {
         let snackBarRef = this._snackBar.open(data.message, "Error", {
           duration: 2500
