@@ -2,7 +2,7 @@
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
 # name of the workflow as appears in "Actions" tab
-name: CICD
+name: Practice Log Main Deployment
 # specifies the trigger for workflow
 on:
   # event that triggers workflow run
