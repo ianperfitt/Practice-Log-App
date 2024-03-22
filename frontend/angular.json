@@ -59,6 +59,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "optimization": {
+                "fonts": false
+              },
               "outputHashing": "all"
             },
             "development": {
