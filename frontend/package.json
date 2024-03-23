@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "dev": "lite-server"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@ngrx/effects": "^13.2.0",
     "@ngrx/store": "^13.2.0",
     "@ngrx/store-devtools": "^13.2.0",
+    "cross-env": "^7.0.3",
     "ngrx-store-localstorage": "^13.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -46,6 +48,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lite-server": "^2.6.1",
     "typescript": "~4.6.2"
   }
 }
