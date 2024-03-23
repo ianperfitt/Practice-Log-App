@@ -29,8 +29,9 @@ export class LoginComponent{
 
   getError() {
     this.error$.subscribe(data => {
+      console.log("DATA MESSAGE: " + data.message);
       if(data) {
-        let snackBarRef = this._snackBar.open(data.message, "Error", {
+        let snackBarRef = this._snackBar.open("Ian", "Error", {
           // duration: 2500
         });
         snackBarRef.afterDismissed().subscribe(() => {
