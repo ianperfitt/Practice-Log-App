@@ -6,6 +6,8 @@ import { AuthenticateService } from 'src/app/core/services/authenticate.service'
 import { User } from '../../models/user.interface';
 import { AuthActions } from '../../state/auth.actions';
 import { selectError } from '../../state/auth.selectors';
+import { HttpErrorResponse } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
 
 
 @Component({
@@ -28,19 +30,18 @@ export class LoginComponent{
   }
 
   getError() {
-    this.error$.subscribe(data => {
-      console.log("DATA MESSAGE: " + data.message);
+    this.error$.subscribe(data  => {
+      console.log("ERROR: " + data)
       if(data) {
-        let snackBarRef = this._snackBar.open("Ian", "Error", {
-          // duration: 2500
+        let snackBarRef = this._snackBar.open(data.message, "Error", {
+          duration: 2500
         });
         snackBarRef.afterDismissed().subscribe(() => {
           this.store.dispatch({type: AuthActions.REMOVE_LOGIN_ERROR, payload: null})
         });
       }
-    })
+     })
   }
-  
 
   checkJWT() {
     if(this.authService.isAuthenticated()) {
