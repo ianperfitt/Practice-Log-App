@@ -60,7 +60,9 @@
                 }
               ],
               "optimization": {
-                "fonts": false
+                "fonts": {
+                  "inline": false
+                }
               },
               "outputHashing": "all"
             },
