@@ -31,7 +31,7 @@ export class LoginComponent{
 
   getError() {
     this.error$.subscribe(data  => {
-      console.log("data before if: " + data);
+      console.log("data before if: ", data);
       console.log("data.message before if: " + data.message);
       console.log("data.error before if: " + data.error);
       console.log("data.error.message before if: " + data.error.message);
