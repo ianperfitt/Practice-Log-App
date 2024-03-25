@@ -31,15 +31,7 @@ export class LoginComponent{
 
   getError() {
     this.error$.subscribe(data  => {
-      console.log("data before if: ", data);
-      console.log("data.message before if: " + data.message);
-      console.log("data.error before if: " + data.error);
-      console.log("data.error.message before if: " + data.error.message);
       if(data) {
-        console.log("data after if: " + data);
-        console.log("data.message after if: " + data.message);
-        console.log("data.error after if: " + data.error);
-        console.log("data.error.message after if: " + data.error.message);
         let snackBarRef = this._snackBar.open(data.message, "Error", {
           duration: 2500
         });
